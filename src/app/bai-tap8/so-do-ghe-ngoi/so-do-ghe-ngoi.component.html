@@ -1,0 +1,14 @@
+<button class="btn btn-secondary btn-block" disabled>Tài xế</button>
+<div class="row">
+    <div class="col-3" *ngFor="let ghe of gheNgoiArray">
+        <button [ngClass]=" {'btn btn-success btn-lg m-2': ghe.SoGhe === mangGheDuocChonButton?.SoGhe, 'btn btn-secondary btn-lg m-2': ghe.SoGhe !== mangGheDuocChonButton?.SoGhe} "
+            (click)="nhanChonGhe(ghe)">{{ghe.SoGhe}}</button>
+    </div>
+
+</div>
+
+
+<!-- hightlight: prod.MaSP === selectedProd?.MaSP
+btn btn-success btn-lg m-2
+btn btn-secondary btn-lg m-2
+-->

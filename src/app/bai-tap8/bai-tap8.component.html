@@ -1,0 +1,13 @@
+<div class="container">
+    <h1 class="text-warning text-center mb-3">ĐẶT VÉ XE BUS HÃNG CYBERSOFT</h1>
+    <div class="row">
+        <div class="col-4 text-center">
+            <app-so-do-ghe-ngoi [gheNgoiArray]="gheNgoiArray" (chonGheEvent)="themGheVaoMangSelectedGhe($event)">
+            </app-so-do-ghe-ngoi>
+        </div>
+        <div class="col-8">
+            <app-danh-sach-ghe-da-dat [selectedGhe]="selectedGhe" (gheMuonHuy)="xoaGheHuy($event)"></app-danh-sach-ghe-da-dat>
+        </div>
+
+    </div>
+</div>

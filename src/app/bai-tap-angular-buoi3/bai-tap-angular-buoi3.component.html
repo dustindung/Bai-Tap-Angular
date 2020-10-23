@@ -1,0 +1,70 @@
+<div class="container">
+  <h1 class="display-4 text-center">Mua Hàng Online</h1>
+  <span class="bg-warning text-white px-3 py-2" (click)="sortSanPhamTheoTen()" style="cursor: pointer;">Sort sản phẩm A-Z</span>
+  <div class="row mt-4">
+    <div *ngFor="let item of phoneList" class="col-4">
+      <div class="card p-2">
+        <img style="height:280px;" src={{item.image}} class="w-100" alt="">
+        <div class="card-text">
+          <h3>{{item.name}}</h3>
+          <p>{{item.description}}</p>
+          <p class="font-weight-bold">${{item.price}}</p>
+        </div>
+
+        <button class="btn btn-success" (click)="themSanPhamVaoGioHang(item)">Cart</button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 mt-5">
+      <span class="bg-warning text-white px-3 py-2">Thêm Hàng Thành Công</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 mt-5">
+      <h1 class="display-4">Giỏ Hàng</h1>
+    </div>
+    <div class="col-12">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Hình Ảnh</th>
+            <th>Sản Phẩm</th>
+            <th>Giá</th>
+            <th>Số Lượng</th>
+            <th>Tổng Cộng</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of phoneSelected">
+            <td><img style="width:200px;" src={{item.image}} /></td>
+            <td style="font-size:25px;">{{item.name}}</td>
+            <td>{{item.price}}</td>
+            <td>
+              {{item.soLuong}}
+              <div class="btn-group">
+                <button class="btn btn-info border-right" (click)="giamSanPham(item)">-</button>
+                <button class="btn btn-info border-left" (click)="tangSanPham(item)">+</button>
+              </div>
+            </td>
+            <td>150$</td>
+            <td>
+              <button class="btn btn-info" (click)="xoaSanPham(item)">x</button>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td style="font-size:30px" class="font-weight-bold">Tổng Tiền</td>
+            <td style="font-size:30px" class="font-weight-bold">{{tongTien}}$</td>
+            <td>
+              <button style="font-size:30px" class="btn btn-info" (click)="xoaHetSanPham()">Thanh Toán</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
